@@ -51,7 +51,7 @@ jobs:
       - name: Replace secret info in appsettings.json
         env:
           SECRET_INFO: ${{ secrets.SECURE_WORLD_SEC_INFO }}
-        run: sed -Ei 's/(.*\"DisplaySecretInfo\"\:\ ).*/\1\"$SECRET_INFO\"/g' /home/runner/work/SecureWorld/SecureWorld/appsettings.json
+        run: sed -Ei 's/(.*\"DisplaySecretInfo\"\:\ ).*/\1\"'"$SECRET_INFO"'\"/g' /home/runner/work/SecureWorld/SecureWorld/appsettings.json
       - name: Print appsettings.json
         run: cat /home/runner/work/SecureWorld/SecureWorld/appsettings.json
       - name: pretend_deploy
