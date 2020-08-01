@@ -48,7 +48,8 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: SecureWorld_Artifact
-
+      - name: test list directory
+        run: ls -a /home/runner/work/SecureWorld/SecureWorld
       - name: pretend_deploy
         run: echo 'pretending to deploy...'
         
