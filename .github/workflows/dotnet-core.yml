@@ -50,8 +50,9 @@ jobs:
           name: SecureWorld_Artifact
       - name: Replace secret info in appsettings.json
         run: sed -Ei 's/(.*\"DisplaySecretInfo\": ).*/\1\"abcd\"/g' /home/runner/work/SecureWorld/SecureWorld/appsettings.json
-      - name: Print appsettings.json
-        run: cat /home/runner/work/SecureWorld/SecureWorld/appsettings.json
+      - run: sed --help
+#      - name: Print appsettings.json
+#        run: cat /home/runner/work/SecureWorld/SecureWorld/appsettings.json
       - name: pretend_deploy
         run: echo 'pretending to deploy...'
         
